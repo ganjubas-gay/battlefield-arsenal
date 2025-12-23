@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Battlefield 6 - Тактический арсенал</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Шапка -->
+            <header>
+                 <div class="logo">
+             <img src="Site-logo.png" alt="Battlefield 6" class="logo-icon">
+             <h1>Battlefield 6 - Тактический Арсенал</h1>
+               </div>
+            <p class="subtitle">Подберите идеальное оружие для своих тактических задач</p>
+        </header>
+
+        <!-- Основной контент -->
+        <div class="content">
+            <!-- Левая колонка - фильтры -->
+            <div class="filters-section">
+                <div class="filters-card">
+                    <h2><i class="fas fa-filter"></i> Фильтры подбора</h2>
+                    
+                    <!-- Класс оружия -->
+                    <div class="filter-group">
+                        <label for="class">
+                            <i class="fas fa-gun"></i> Класс оружия:
+                        </label>
+                        <select id="class">
+                            <option value="assault">Штурмовые винтовки</option>
+                            <option value="carbine">Карабины</option>
+                            <option value="smg">Пистолеты-пулеметы</option>
+                            <option value="lmg">Ручные пулеметы</option>
+                            <option value="sniper">Снайперские винтовки</option>
+                            <option value="dmr">Марксманские винтовки</option>
+                            <option value="shotgun">Дробовики</option>
+                            <option value="pistol">Пистолеты</option>
+                            <option value="battlepickup">Боевые подборки</option>
+                            <option value="melee">Оружие ближнего боя</option>
+                        </select>
+                    </div>
+
+                    <!-- Уровень доступа -->
+                    <div class="filter-group">
+                        <label for="rank">
+                            <i class="fas fa-star"></i> Уровень доступа:
+                        </label>
+                        <select id="rank">
+                            <option value="any">Любой ранг</option>
+                            <option value="1">Ранг 1 (Начальный)</option>
+                            <option value="2">Ранг 2</option>
+                            <option value="3">Ранг 3</option>
+                            <option value="4">Ранг 4</option>
+                            <option value="5">Ранг 5</option>
+                            <option value="6">Ранг 6</option>
+                            <option value="7">Ранг 7 (Элита)</option>
+                        </select>
+                    </div>
+
+                    <!-- Скорострельность -->
+                    <div class="filter-group">
+                        <label for="fireRate">
+                            <i class="fas fa-tachometer-alt"></i> Скорострельность:
+                        </label>
+                        <select id="fireRate">
+                            <option value="any">Любая</option>
+                            <option value="low">Низкая (до 600 выстр/мин)</option>
+                            <option value="medium">Средняя (600-900 выстр/мин)</option>
+                            <option value="high">Высокая (900+ выстр/мин)</option>
+                        </select>
+                    </div>
+
+                    <!-- Дистанция -->
+                    <div class="filter-group">
+                        <label for="distance">
+                            <i class="fas fa-bullseye"></i> Предпочтительная дистанция:
+                        </label>
+                        <select id="distance">
+                            <option value="any">Любая</option>
+                            <option value="close">Ближняя (0-50м)</option>
+                            <option value="medium">Средняя (50-150м)</option>
+                            <option value="long">Дальняя (150м+)</option>
+                        </select>
+                    </div>
+
+                    <!-- Кнопки -->
+                    <div class="filter-buttons">
+                        <button id="searchBtn" class="search-btn">
+                            <i class="fas fa-search"></i> Найти оружие
+                        </button>
+                        <button id="resetBtn" class="reset-btn">
+                            <i class="fas fa-redo"></i> Сбросить фильтры
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Статистика -->
+                <div class="stats-card">
+                    <h3><i class="fas fa-chart-bar"></i> Статистика подбора</h3>
+                    <div class="stats-content">
+                        <p>Найдено оружия: <span id="weaponsCount">0</span></p>
+                        <p>Средний урон: <span id="avgDamage">0</span></p>
+                        <p>Средняя точность: <span id="avgAccuracy">0</span>%</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Правая колонка - результаты -->
+            <div class="results-section">
+                <h2><i class="fas fa-gun"></i> Подходящее оружие</h2>
+                <div class="results-info">
+                    <p id="resultsInfo">Используйте фильтры для подбора оружия</p>
+                </div>
+                <div id="weaponsGrid" class="weapons-grid">
+                    <!-- Карточки оружия появятся здесь -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Подвал -->
+        <footer>
+            <p>Battlefield 6 Arsenal © 2025 | Данные могут отличаться от финальной версии игры</p>
+            <p class="disclaimer">Это фанатский проект. Battlefield является товарным знаком Electronic Arts Inc.</p>
+        </footer>
+    </div>
+    
+    <div class="footer-contacts">
+            <h3><i class="fas fa-headset"></i> Контакты разработчика</h3>
+            <p>Есть вопросы или предложения? Напишите в Telegram:</p>
+            
+            <div class="contacts-grid">
+                <a href="https://t.me/DragonbornBabyTape" class="contact-card" target="_blank" rel="noopener noreferrer">
+                    <div class="contact-icon">
+                        <i class="fab fa-telegram"></i>
+                    </div>
+                    <div class="contact-info">
+                        <div class="contact-name">Вайно Георгий</div>
+                        <div class="contact-username">@DragonbornBabyTape</div>
+                    </div>
+                </a>
+                
+                <a href="https://t.me/m4ksoucee" class="contact-card" target="_blank" rel="noopener noreferrer">
+                    <div class="contact-icon">
+                        <i class="fab fa-telegram"></i>
+                    </div>
+                    <div class="contact-info">
+                        <div class="contact-name">Максим Власов</div>
+                        <div class="contact-username">@m4ksoucee</div>
+                    </div>
+                </a>
+            </div>
+            
+            <p class="contact-note">
+                <i class="fas fa-info-circle"></i>
+                Напишите нам для обратной связи по сайту или предложений по улучшению
+            </p>
+        </div>
+    </div>
+</footer>
+
+    <!-- Подключение скриптов -->
+    <script src="data-weapons.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
